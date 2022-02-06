@@ -1,2 +1,4 @@
 resource/cxml
 resource/cell_plugin.rco
+build
+.vscode
