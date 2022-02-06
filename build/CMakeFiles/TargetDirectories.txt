@@ -1,4 +1,0 @@
-C:/Users/Ibrahim/Documents/Projects/Cell/build/CMakeFiles/rebuild_cache.dir
-C:/Users/Ibrahim/Documents/Projects/Cell/build/CMakeFiles/Cell.dir
-C:/Users/Ibrahim/Documents/Projects/Cell/build/CMakeFiles/edit_cache.dir
-C:/Users/Ibrahim/Documents/Projects/Cell/build/CMakeFiles/Cell.suprx.target.dir

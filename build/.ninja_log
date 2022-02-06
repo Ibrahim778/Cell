@@ -1,8 +1,0 @@
-# ninja log v5
-0	295	6657702147373593	CMakeFiles/Cell.dir/src/main.cpp.o	2eda0d8b66885959
-0	7	0	clean	6dd091519ded1980
-3	44	6657702145143540	CMakeFiles/Cell.dir/Cell.emd.o	de275d45f341f48d
-2	280	6657702147213565	CMakeFiles/Cell.dir/src/utils.cpp.o	6fbf2f1a90143fb
-295	341	6657702148113532	Cell	65e5426fcffc5df3
-342	376	6657702148483719	Cell.suprx	8e83621a13f42052
-342	376	6657702148483719	C:/Users/Ibrahim/Documents/Projects/Cell/build/Cell.suprx	8e83621a13f42052
