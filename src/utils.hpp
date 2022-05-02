@@ -18,7 +18,7 @@ public:
     static SceVoid SetWidgetColor(Widget *w, float r, float g, float b, float a);
     static SceVoid SetWidgetPosition(Widget *wi, float x, float y, float z, float w);
     static SceVoid SetWidgetSize(Widget *wi, float x, float y, float z, float w);
-    static Widget *GetSceneByHash(Plugin *p, SceInt32 hash);
+    static Widget *GetPageByHash(Plugin *p, SceInt32 hash);
     static SceVoid PrintAllChildren(Widget *widget, int offset);
     static Widget *MakeWidget(SceInt32 id, const char *type, const char *style, Widget *root);
     static Widget *MakeWidget(const char *id, const char *type, const char *style, Widget *root);

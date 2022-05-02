@@ -40,11 +40,11 @@ Widget *Utils::GetChildByHash(Widget *Parent, SceUInt32 hash)
     return Parent->GetChildByHash(&e, 0);
 }
 
-Widget *Utils::GetSceneByHash(Plugin *p, SceInt32 hash)
+Widget *Utils::GetPageByHash(Plugin *p, SceInt32 hash)
 {
     Resource::Element e;
     e.hash = hash;
-    return p->GetSceneByHash(&e);
+    return p->GetPageByHash(&e);
 }
 
 Widget *Utils::MakeWidget(const char *id, const char *type, const char *style, Widget *root)
@@ -79,8 +79,8 @@ Widget *Utils::MakeWidget(SceInt32 id, const char *type, const char *style, Widg
 SceInt32 Utils::SetWidgetLabel(const char *text, Widget *widget)
 {
     if(text == NULL || widget == NULL || text[0] == '\0' /* empty string */ ) return;
-    WString wstr;
-    String str;
+    wstring wstr;
+    string str;
     str = text;
     str.ToWString(&wstr);
     print("Assigning to 0x%X text: %s str: %s wstr: %ls\n", widget->hash, text, str.data, wstr.data);
@@ -130,7 +130,7 @@ SceVoid Utils::PrintAllChildren(Widget *widget, int offset)
     for (int i = 0; i < widget->childNum; i++)
     {
         for (int i = 0; i < offset; i++) print(" ");
-        WString str;
+        wstring str;
         widget->GetChildByNum(i)->GetLabel(&str);
         print("%d: 0x%X (%s, \"%ls\")\n", i, widget->GetChildByNum(i)->hash, widget->GetChildByNum(i)->GetType(), str.data);
         Utils::PrintAllChildren(widget->GetChildByNum(i), offset + 4);

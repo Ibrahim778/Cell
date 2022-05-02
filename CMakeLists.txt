@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-set(CMAKE_TOOLCHAIN_FILE "$ENV{SCE_PSP2_SDK_DIR}/host_tools/build/cmake/psp2-gnu-toolchain")
+set(CMAKE_TOOLCHAIN_FILE "$ENV{SCE_PSP2_SDK_DIR}/host_tools/build/cmake/psp2-snc-toolchain.cmake")
 project(Cell)
 include(VitaDevelopmentSuite)
 
@@ -58,3 +58,7 @@ target_link_libraries(${PROJECT_NAME}
 
 VDSuiteSignElf(${PROJECT_NAME}.suprx ${PROJECT_NAME})
 
+# Generate RCO
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND python ${CMAKE_SOURCE_DIR}/resource/cxml/appinfo/appinfo_compiler.py -o ${CMAKE_SOURCE_DIR}/resource/cell_plugin.rco ${CMAKE_SOURCE_DIR}/resource/src/cell_plugin.xml
+)
