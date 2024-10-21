@@ -24,10 +24,12 @@ Widget *scrollView;
 Widget *baseWidget;
 
 /*
-DEX 3.60:
+DEX 3.60: segment_0
     0x2d1c:     GetIconMemoryPool
     0x2c74:     InitIconMemoryPool
     0xb9198:    Init Icons
+
+    IconCaptureManager is the service that creates and stores the textures for folder icons
 */
 
 SceVoid onPluginReady(Plugin *plugin)
