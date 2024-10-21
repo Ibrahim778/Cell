@@ -1,5 +1,5 @@
-#ifndef TYPES_HPP_QM_REBORN
-#define TYPES_HPP_QM_REBORN
+#ifndef UTILS_HPP
+#define UTILS_HPP
 #include <libdbg.h>
 #include <kernel.h>
 #include <appmgr.h>
@@ -22,9 +22,7 @@ public:
     static SceVoid PrintAllChildren(Widget *widget, int offset);
     static Widget *MakeWidget(SceInt32 id, const char *type, const char *style, Widget *root);
     static Widget *MakeWidget(const char *id, const char *type, const char *style, Widget *root);
-    static SceVoid HideAllChildren(Widget *widget);
     static Widget *AddFromTemplate(Plugin *p, Widget *targetRoot, const char *id);
-    static SceVoid SetWidgetTypeToColor(Widget *widget, const char *type);
 };
 
 #endif

@@ -5,21 +5,23 @@ include(VitaDevelopmentSuite)
 
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
+
 enable_language(EMD)
 enable_language(C ASM)
 enable_language(CXX ASM)
 
 add_compile_options(
-    -D_SCE_TARGET_OS_PSP2=1 -Xdiag=0 -Xquit=2
+    -D_SCE_TARGET_OS_PSP2=1 -Xdiag=0 -Xquit=2 -D_DEBUG
 )
 add_link_options(
   --prx-no-runtime-support
 )
 
 include_directories(
-  ${CMAKE_SOURCE_DIR}
   ${VDSUITE_USER_INCLUDE_DIRECTORIES}
   ${VDSUITE_STANDARD_INCLUDE_DIRECTORIES}
+  $ENV{SCE_PSP2_SDK_DIR}/target/include
+  $ENV{SCE_PSP2_SDK_DIR}/target/include_common
 )
 
 link_directories(
@@ -57,8 +59,3 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 VDSuiteSignElf(${PROJECT_NAME}.suprx ${PROJECT_NAME})
-
-# Generate RCO
-add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-    COMMAND python ${CMAKE_SOURCE_DIR}/resource/cxml/appinfo/appinfo_compiler.py -o ${CMAKE_SOURCE_DIR}/resource/cell_plugin.rco ${CMAKE_SOURCE_DIR}/resource/src/cell_plugin.xml
-)
